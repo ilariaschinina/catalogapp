@@ -1,43 +1,29 @@
-# Catalog App for a small coding book collection
-This app has been built as project for the Udacity Full Stack Web Developer Nanodegree program.
-It is a small catalog app that organizes books for learning programming languages.
-
-Main features:
-* The basic CRUD functionalities have been implemented and only the authorized users can have access to them
-* The app supports OAuth2 login with Google
-* The project implements JSON endpoints that serve the same information as displayed in the HTML endpoints:
-    * for arbitrary item in the catalog
-    * for all categories
-    * for a single category
+# Linux server configuration
+This app and the server have been setup as projects for [Udacity Full Stack Developer Nanodegree Program](https://www.udacity.com/course/full-stack-web-developer-nanodegree--nd0044)
 
 ## Table of Contents
+- [Server Details](#server-details)
+- [Softwares Installed](#softwares-installed)
+- [Configurations Made](#configurations-made)
+- [Resources](#resources)
 
-- [Table of Contents](#table-of-contents)
-- [Prerequisites: VM](#prerequisites-VM)
-- [Prerequisites: the data](#prerequisites-the-data)
-- [Running](#running)
+### Server Details
+* IP-address: `52.59.208.241`
+* URL: `http://udacity.schinina.eu/`
+* SSH port: `2200`
+* Server hosted by [Amazon Lightsail](https://lightsail.aws.amazon.com/)
 
+### Softwares Installed
+* Apache2 and wsgi module
+* Postgres
 
-### Prerequisites: VM
+### Configurations Made
+* Updated all currently installed packages
+* Changed the SSH port from 22 to 2200
+* Configured the UFW to only allow incoming connections for SSH (port 2200), HTTP (port 80), and NTP (port 123)
+* Created a new user, `grader`, given sudo permissions, configured SSH authorisation access
+* Configured the local timezone to UTC
+* Installed and configured Apache to serve a Python mod_wsgi application.
+* Installed and configured PostgreSQL:
+	* Created a new database user named catalog that has limited permissions to my catalog application database.
 
-* Install [VirtualBox](https://www.virtualbox.org/wiki/Download_Old_Builds_5_1)
-* Install [Vagrant](https://www.vagrantup.com/downloads.html)
-	* Run `vagrant --version` to be sure that Vagrant is successfully installed)
-* The VM configuration is included in this repository
-* Start the virtual machine from your terminal while being inside the **vagrant** subdirectory by running:
-	* `vagrant up`
-	* `vagrant ssh`
-* Now you are logged, change directory with `cd /vagrant/catalog`. Files in the VM's `/vagrant` directory are shared with the vagrant folder on your computer
-
-### Prerequisites: the data
-
-* Run `pip  install  -r  requirements.txt` in order to install the dependencies
-* Run `python3 db_setup.py`to generate the database
-* Run  `python3 db_data.py` to populate the database
-* Create a [Google credential file](https://console.cloud.google.com/projectselector2/home/dashboard) (to allow Google login), name it `client_secret.json` and place in the `catalog` folder
-
-### Running
-
-* Before launching the main script, type in your terminal `export OAUTHLIB_INSECURE_TRANSPORT=1` (this is to avoid having to use https with Oauthlib)
-* Run now `python3 application.py`
-* Open your browser and go to `http://localhost:5000`
