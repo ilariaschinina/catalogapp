@@ -23,7 +23,7 @@ This app and the server have been setup as projects for [Udacity Full Stack Deve
 * Configured the UFW to only allow incoming connections for SSH (port 2200), HTTP (port 80), and NTP (port 123)
 * Created a new user, `grader`, given sudo permissions, configured SSH authorisation access
 * Configured the local timezone to UTC
-* Installed and configured Apache to serve a Python mod_wsgi application.
+* Installed and configured Apache to serve a Python mod_wsgi application
 * Installed and configured PostgreSQL:
-	* Created a new database user named catalog that has limited permissions to my catalog application database.
+	* Created a new database user named catalog that has limited permissions to my catalog application database
 
