@@ -1,0 +1,43 @@
+<!-- Header -->
+{% include 'snippets/head.html' %}
+
+<body>
+
+    <!-- Sidebar -->
+    {% include 'snippets/sidebar.html' %}
+
+    <!-- Page Content -->
+    <div style="margin-left:25%">
+
+        {% include 'snippets/topbanner.html' %}
+
+        <div class="w3-container">
+            <div class = 'flash'>
+                    {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                    {% for message in messages %}
+                    <em> {{ message }} </em>
+                    {% endfor %}
+                    {% endif %}
+                    {% endwith %}
+                </div>
+        <h2>{{item.title}}</h2>
+        <h3>{{item.author}}</h3>
+        <p class="description">
+            {{item.description}}
+        </p>
+        {% if is_owner %}
+            <a class="button" href="/category/{{category.id}}/list/{{item.id}}/edit">Edit</a>
+            <a class="button" href="/category/{{category.id}}/list/{{item.id}}/delete">Delete</a>
+        {% else %}
+            <a class="button" href="/category/{{category.id}}/list/{{item.id}}/edit" disabled>Edit</a>
+            <a class="button" href="/category/{{category.id}}/list/{{item.id}}/delete" disabled>Delete</a>
+        {% endif %}
+        <a class="button" href="/category/{{category.id}}/list">Back</a>
+        </div>
+
+    </div>
+</body>
+</html>
+
+

@@ -1,0 +1,43 @@
+<!-- Header -->
+{% include 'snippets/head.html' %}
+
+<body>
+
+    <!-- Sidebar -->
+    {% include 'snippets/sidebar.html' %}
+
+    <!-- Page Content -->
+    <div style="margin-left:25%">
+
+        {% include 'snippets/topbanner.html' %}
+
+        <div class="w3-container">
+            <h2>{{category.name}}</h2>
+
+            <div class = 'flash'>
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                {% for message in messages %}
+                <em> {{ message }} </em>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+            </div>
+
+
+
+
+            <ul>
+                {% for item in items %}
+                    <li class="main_list"><a href="/category/{{category.id}}/list/{{item.id}}"> {{ item.title }} </a></li>
+                {% endfor %}
+            </ul>
+            {% if is_owner %}
+                <a class="button" href="/category/{{category.id}}/list/new_item">Add new item</a>
+            {% else %}
+                <a class="button" href="/category/{{category.id}}/list/new_item">Add new item</a>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!-- Header -->
+{% include 'snippets/head.html' %}
+
+<body>
+
+    <!-- Sidebar -->
+    {% include 'snippets/sidebar.html' %}
+
+    <!-- Page Content -->
+    <div style="margin-left:25%">
+
+        {% include 'snippets/topbanner.html' %}
+
+        <div class="w3-container">
+            <h2>Delete {{item.title}}</h2>
+            <p>Are you sure you want delete {{item.title}}?</p>
+            <form action="#" method='post'>
+                <input class="button" type="submit" value="Delete">
+                <a class="button" href="/category/{{category.id}}/list/{{item.id}}">Back</a>
+            </form>
+            </div>
+    </div>
+
