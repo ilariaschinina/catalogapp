@@ -27,3 +27,10 @@ This app and the server have been setup as projects for [Udacity Full Stack Deve
 * Installed and configured PostgreSQL:
 	* Created a new database user named catalog that has limited permissions to my catalog application database
 
+
+### Resources
+* [Udacity Full Stack Developer Nanodegree Program](https://www.udacity.com/course/full-stack-web-developer-nanodegree--nd0044)
+* [Ubuntu documentation - Sudoers](https://help.ubuntu.com/community/Sudoers)
+* [DigitalOcean - How To Install and Use PostgreSQL on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-18-04)
+* [Linode - How to Configure a Firewall with UFW](https://www.linode.com/docs/security/firewalls/configure-firewall-with-ufw/)
+* [Flask documentation - mod_wsgi (Apache)](https://flask.palletsprojects.com/en/1.1.x/deploying/mod_wsgi/)
